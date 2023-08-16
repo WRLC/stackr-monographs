@@ -120,6 +120,7 @@ values$df <- d
 ```{r wc_holdings}
 # Functions for getting OCLC holdings
 wc_get_token <- function() {
+  cat("Getting access token\n")
   creds <- fromJSON('./wcapi.json')
   client_id <- creds$wcapi$client_id
   client_secret <- creds$wcapi$client_secret
@@ -142,6 +143,7 @@ wc_get_token <- function() {
 }
 
 refresh_wc_token <- function(old_token) {
+  cat("Refreshing access token\n")
   refresh_token <- old_token$refresh_token
 
   creds <- fromJSON('wcapi.json')
