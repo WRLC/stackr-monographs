@@ -215,8 +215,6 @@ wc_get_new <- function(d, have) {
   
   # If we have some new numbers, sapply over them with wc_holdings_oclc()
   if(nrow(new) > 0) {
-    # Get a WC access token
-    token <- wc_get_token()
 
     tmp <- sapply(seq_along(new$oclc_num),
                   function(i) {
